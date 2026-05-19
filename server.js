@@ -21,7 +21,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // ── Static frontend ───────────────────────────────────
-app.use(express.static(path.join(__dirname, '../frontend')));
+app.use(express.static(path.join(__dirname, 'frontend')));
 
 // ── API Routes ────────────────────────────────────────
 app.use('/api/auth',     require('./routes/auth'));
@@ -31,7 +31,7 @@ app.use('/api/admin',    require('./routes/admin'));
 
 // ── Catch-all → SPA ──────────────────────────────────
 app.use((req, res) => {
-  res.sendFile(path.join(__dirname, '../frontend/index.html'));
+ res.sendFile(path.join(__dirname, 'frontend/index.html'))
 });
 
 // ── Socket.io real-time ───────────────────────────────
